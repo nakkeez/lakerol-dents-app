@@ -85,7 +85,9 @@ const authOptions: AuthOptions = {
   ],
   callbacks: {
     /**
-     * Refresh the access token when needed.
+     * Refresh the access token using the refresh token when the access token expires.
+     * Otherwise, return the token as is.
+     *
      * @param token The token object
      */
     async jwt({ token, user }) {
@@ -116,6 +118,7 @@ const authOptions: AuthOptions = {
 
 /**
  * Helper function to get the session on the server without having to import the authOptions
+ *
  * @returns The session object or null
  */
 const getSession = () => getServerSession(authOptions);

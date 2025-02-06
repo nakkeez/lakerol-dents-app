@@ -8,9 +8,9 @@ import { BiFilter, BiSearch, BiLogOut } from "react-icons/bi";
 import { toast } from "react-toastify";
 
 /**
- * Component for displaying header with expanding navigation bar.
+ * Component for displaying navigation bar with expandable menu.
  *
- * @returns Header component
+ * @returns Navigation bar component
  */
 export default function Navbar(): React.JSX.Element {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,12 +36,10 @@ export default function Navbar(): React.JSX.Element {
   ];
 
   useEffect(() => {
-    // Redirect user to login page if not authenticated or there's an error
+    // Redirect user to login page if not authenticated or
+    // there's an error while refreshing access token
     if (!session || session.error) {
-      toast.info("Session expired. Please login again.");
-      setTimeout(() => {
-        signOut();
-      }, 3000);
+      signOut();
     }
   }, [session]);
 

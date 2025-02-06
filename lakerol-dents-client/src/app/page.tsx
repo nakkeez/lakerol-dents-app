@@ -35,6 +35,9 @@ export default function HomePage(): React.JSX.Element {
     await fetchProduct();
   }
 
+  /**
+   * Fetch product from the server based on the EAN code.
+   */
   async function fetchProduct() {
     setProduct(null);
     const url = `${process.env.NEXT_PUBLIC_BASE_URL}/api/${eanCode}`;

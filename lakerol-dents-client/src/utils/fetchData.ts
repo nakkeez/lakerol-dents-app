@@ -37,7 +37,7 @@ export async function fetchData<T>({
         toast.warn(onNotFoundMessage || "No data found");
       }
     } else if (response.status === 401) {
-      toast.error("Unauthorized. Please login again");
+      toast.error("Session expired. Please login again");
       setTimeout(() => {
         signOut();
       }, 3000);
