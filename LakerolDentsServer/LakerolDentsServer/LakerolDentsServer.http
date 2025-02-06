@@ -1,0 +1,6 @@
+@LakerolDentsServer_HostAddress = http://localhost:5057
+
+GET {{LakerolDentsServer_HostAddress}}/
+Accept: application/json
+
+###
