@@ -5,7 +5,6 @@ import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { BiFilter, BiSearch, BiLogOut } from "react-icons/bi";
-import { toast } from "react-toastify";
 
 /**
  * Component for displaying navigation bar with expandable menu.
